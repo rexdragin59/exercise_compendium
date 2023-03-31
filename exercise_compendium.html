@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercises</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="res/logo.png" type="image/x-icon">
+	<style>
+		hr.dottedHr{border-top: dotted 3px;}
+	</style>
+</head>
+<body>
+	<input type="button" value="toggle menu" onclick="open_category_menu()"></input>
+	<hr>
+	<div id="categoryMenu"><!-- button inputs populated by JS one time at start -->
+	</div>
+	<hr>
+	<div id="exercisesMenu"></div><!-- button inputs populated by JS via callback -->
+	<hr>
+	<div id="exerciseDetails">
+		<div name="Bicep Curl" data-muscle="biceps" data-equip="dumbbell">
+			<h1>Bicep Curl</h1>
+			<img alt="bicep curl correct" src="res/bicepCurlCorrect.gif"></img>
+			<img alt="bicep curl wrong" src="res/bicepCurlWrong.gif"></img>
+			<h2>Tips</h2>
+			<ul>
+				<li>Elbows stationary WRT body</li>
+				<li>Body not rocking back and forth</li>
+				<li>Lift dumbbell up to nipples</li>
+			</ul>
+			
+			<h2>Links</h2>
+			<ul>
+				<li><a href="http://www.wikihow.com/Increase-Upper-Body-Strength">wikihow</a></li>
+				<li><a href="https://www.youtube.com/shorts/2jpteC44QKg">max euceda youtube short</a></li>
+			</ul>
+		</div>
+		<div name="Overhead Triceps Extension" data-muscle="triceps" data-equip="dumbbell">
+			<h1>Overhead Triceps Extension</h1>
+			<img alt="overhead tricep extension" src="res/overhead tricep extension.gif"></img>
+			<h2>Tips</h2>
+			<ul>
+				<li>Elbows always &gt;90 degrees</li>
+				<li>Upper arms perpendicular to floor</li>
+			</ul>
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://legionathletics.com/overhead-triceps-extension/">legion athletics</a></li>
+			</ul>
+		</div>
+		<div name="Overhead Cable Triceps Extension" data-muscle="triceps" data-equip="cable">
+			<h1>Overhead Cable Triceps Extension</h1>
+			<img alt="overhead cable tricep extension" src="res/overhead cable tricep extension.gif"></img>
+			<h2>Tips</h2>
+			<ul>
+				<li>Cable attached at head elevation</li>
+				<li>Bend over until upper arm parallel to cable and forearm perpendicular to cable</li>
+				<li>Elbows clamping head without touching head</li>
+				<li>Lean forward one one foot instead of letting cable keep you upright</li>
+			</ul>
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://www.youtube.com/watch?v=GzmlxvSFE7A&t=1m8s">Colossus Fitness youtube</a></li>
+			</ul>
+		</div>
+		<div name="Shoulder Press" data-muscle="triceps, front deltoid(primary) lateral deltoid (secondary), rear deltoid (secondary)" data-equip="dumbbell">
+			<h1>Shoulder Press</h1>
+			<img alt="Shoulder Press Front" src="res/dumbbell shoulder press.gif"></img>
+			<img alt="Shoulder Press Side" src="res/dumbbell shoulder press side.gif"></img>
+			<h2>Tips</h2>
+			<ul>
+				<li>Raise dumbbell vertically upward</li>
+				<li>Elbows at 80 degrees WRT mid-sagittal plane</li>
+				<li>Back is straight</li>
+				<li>Seated with slight lean backward OR standing</li>
+				<li>At top: arms are vertical, dumbbells not touching, and elbows not locked</li>
+				<li>At bottom, upper arms as low as 45 degrees below horizontal</li>
+				
+			</ul>
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://www.youtube.com/watch?v=rO_iEImwHyo">Max Euceda youtube</a></li>
+			</ul>
+		</div>
+		<div name="Pushup" data-muscle="triceps, pectorals, abdominals (secondary), front deltoid (secondary)" data-equip="none">
+			<h1>Pushup</h1>
+			<img alt="pushup thumbnail" src="res/pushup side neutral.gif"></img>
+			<h2>Tips</h2>
+			<img alt="wide narrow grip pushup" src="res/calisthenticMovement pushup front wide narrow.gif"></img>
+			<ul>
+				<li>Literature found no significant difference between which muscles were activated more in wide and narrow grip pushups</li>
+				<li>Can default to having hands be shoulder width apart</li>
+				<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4792988/">National Library of Medicine</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="jeremy etheir chest triceps focus pushup" src="res/jeremy ethier pushups.gif"></img>
+			<ul>
+				<li>Chest focused: Elbow remains vertically above hand</li>
+				<li>Triceps focused: Forearm bends 45 degrees away from vertical</li>
+				<li><a href="https://www.youtube.com/watch?v=MO10KOoQx5E">Jeremy Ethier perfect pushup youtube</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="jeremy ethier pushup rotate hand" src="res/pushup hands rotated inout.png"></img>
+			<img alt="saturno movement pushup rotate elbows" src="res/pushup rotate elbows.gif"></img>
+			<ul>
+				<li>Hands & fingers unrotated on ground</li>
+				<li>Before pushups, rotate hands laterally on ground to move elbows medially.</li>
+				<li>Before pushups, rotate shoulder so that elbows move medially.</li>
+				<li><a href="https://www.youtube.com/watch?v=MO10KOoQx5E">Jeremy Ethier perfect pushup youtube</a></li>
+				<li><a href="https://www.youtube.com/shorts/ba8tr1NzwXU">Saturno movement youtube short</a></li>
+			</ul>
+			<br>
+			<img alt="pushup rotate elbows 2" src="res/pushup rotate elbows 2.gif"></img>
+			<img alt="pushup rotate elbows 3" src="res/pushup rotate elbows 3 athlean x.gif"></img>
+			<ul>
+				<li><a href="https://www.youtube.com/watch?v=iIa2-uVHzM0&t=6m47s">Athlean-X 10 pushup mistakes</a></li>
+				<li>While pushing up, rotate move elbow medially, to recruit chest muscles more</li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="pushup no flare elbows" src="res/pushup no flare elbows.gif"></img>
+			<img alt="pushup flare elbows" src="res/pushup flare elbows.gif"></img>
+			<ul>
+				<li>Forearm should be mo more than 45 degrees away from mid-sagittal plane to prevent shoulder injury</li>
+				<li><a href="https://www.youtube.com/watch?v=IODxDxX7oi4">Calisthenic movement youtube perfect pushup</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="calisthenic movement shoulder blades" src="res/pushup shoulder blades.gif"></img>
+			<ul>
+				<li>Throughout the pushup, keep shoulders blades depressed inferiorly</li>
+				<li><a href="https://www.youtube.com/watch?v=IODxDxX7oi4">Calisthenic movement youtube perfect pushup</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="STRIQfit push up scapula movement" src="res/striq retract protract scapula pushup.gif"></img>
+			<ul>
+				<li>Retract scapula medially deliberately when moving down, not just letting gravity squeeze scapula together</li>
+				<li>Protract scapula laterally when pushing upward until fully protracted at top</li>
+				<li><a href="https://www.youtube.com/shorts/B3bYnimmpjM">STRIQfit perfect pushup</a></li>
+				<li><a href="https://www.youtube.com/watch?v=lnR_kb5Wjf8&t=7m56s">FitnessFAQ 10 common pushup mistakes</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="body moves superiorly when going down" src="res/pushup body move superiorly.png"></img>
+			<ul>
+				<li>Body moves a bit superiorly on the way down so that the fingertips are in line with nipples (rather than neck) when fully down</li>
+				<li><a href="https://www.youtube.com/watch?v=VJsayRzxq-U">Calisthenic movement youtube bad pushups</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="pushup rotate pelvis" src="res/calisthenic movement pushup rotate pelvis.gif"></img>
+			<img alt="instagram lordosis kyphosis" src="res/instagram lordosis thicc.jpg"></img>
+			<ul>
+				<li>Rotate pelvis kyphotically if back is arched lordotically; keep spine straight throughout pushup</li>
+				<li>Keep glutes squeezed throughout pushup</li>
+				<li><a href="https://www.youtube.com/watch?v=IODxDxX7oi4">Calisthenic movement youtube perfect pushup</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="bad ROM 1" src="res/FitnessFAQ bad ROM pushup 1.gif"></img>
+			<p>ROM good at top since elbows fully straight, but chest not touching floor</p>
+			<br>
+			<img alt="bad ROM 2" src="res/FitnessFAQ bad ROM pushup 2.gif"></img>
+			<p>ROM good at bottom since chest touches ground, but elbows not fully straight at top</p>
+			<br>
+			<img alt="good ROM" src="res/FitnessFAQ good ROM pushup.gif"></img>
+			<p>Good full ROM: chest touching floor at bottom, and elbows fully straight at top</p>
+			<br>
+			<ul>
+				<li>Full range of motion (ROM): chest touching floor at bottom, and elbows fully straight at top</li>
+				<li>It doesn't matter whether elbows are fully locked at top or [slightly less than fully locked] at top</li>
+				<li><a href="https://www.youtube.com/watch?v=lnR_kb5Wjf8">FitnessFAQs 10 pushup mistakes youtube</a></li>
+				<li><a href="https://www.youtube.com/watch?v=pzsgT7mmMPo">Red Delta Project youtube video about locking elbows</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="sphinx pushup" src="res/pushup sphinx.gif"></img>
+			<h2>Variation: Sphinx pushup</h2>
+			<ul>
+				<li>Focuses on triceps and abs</li>
+				<li>Instructions: Start in plank position, with elbows directly underneath (or a bit inferior to) shoulders, with hands being shoulder width apart. Push up until elbows are fully extended. Keep back and legs straight at all time during the sphinx pushup</li>
+				<li><a href="https://www.youtube.com/watch?v=IODxDxX7oi4">Calisthenic movement youtube perfect pushup</a></li>
+				<li><a href="https://fitnessdrum.com/sphinx-push-ups/">Fitness Drum</a></li>
+				<li><a href="https://www.youtube.com/watch?v=wJfn8qOjdJ0">Cult Fit official</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="pseudo planche pushup" src="res/pushup side psuedo planche.gif"></img>
+			<h2>Variation: Pseudo-planche pushup</h2>
+			<ul>
+				<li>Harder variation of pushup with posture similar to a full planche</li>
+				<li>Instructions: Start in pushup's top position, then move body superiorly until angle of arm increases past 90 degrees; Full planche angle is about 45 degrees</li>
+				<li>Fingers should be pointed 45 degrees (or even 90 degrees) from mid-sagittal plane</li>
+				<li>To combat [pushing body inferiorly, can gently touch head to wall throughout pseudo-planche pushup; head must remain in gently contact with wall throughout this exercise</li>
+				<li><a href="https://www.youtube.com/watch?v=ACCElohmii0">FitnessFAQs youtube</a></li>
+				<li><a href="https://www.youtube.com/watch?v=IODxDxX7oi4">Calisthenic movement youtube perfect pushup</a></li>
+			</ul>
+			<hr class="dottedHr">
+			<ul>
+				<li>Unconfirmed optional: squeeze chest at top of pushup</li>
+				<li>Unconfirmed optional: Remain in pushup's top position for a short while after arms are at muscle failure</li>
+			</ul>
+			<hr class="dottedHr">
+			<h2>Variation: pike pushup</h2>
+			<img alt="pike pushup" src="res/pike pushup.gif"></img>
+			<ul>
+				<li>Focuses on shoulders</li>
+				<li>Instructions: Hands and feet 3 feet apart or the smallest dist that hands and feet can both be comfortable flat on floor. Arms can be vertical or slightly in front of or behind face level. </li>
+				<li>Same {elbow flare, scapula movement, spine&neck straight, range of motion, moving body superiorly/anteriorly} compared to regular pushup</li>
+				<li>Heels lift off floor, while toes are always touching ground</li>
+				<li>Keep pelvis angle constant throughout this exercise</li>
+				<li>Elevate hands to decrease intensity.</li>
+				<li>Elevate feet to increse intensity.</li>
+			</ul>
+			<li><a href="https://www.youtube.com/watch?v=0cT6ug3WVn4">Saturno movement youtube pike pushup</a></li>
+			<li><a href="https://www.youtube.com/watch?v=66x0qQiJ-MA">Minus The Gym youtube pike pushup</a></li>
+			<li><a href="https://www.youtube.com/watch?v=Ajna6AxQdtw">Andrew Alinda youtube</a></li>
+		</div>
+	</div>
+	<div id="errorMarquee" style="font-family: courier new; font-size: 10px;">Javascript did not compile</div>
+</body>
+<script>
+console.log('program begin');
+
+const MARQUEE_STRS_MAX_QTY = 10;
+let marqueeStrs = [];	// Array of String of length at most MARQUEE_STRS_MAX_QTY
+let marqueeFirstIndex = 0;
+function write_marquee(str)
+{
+	marqueeStrs.push(str);
+	if (marqueeStrs.length > MARQUEE_STRS_MAX_QTY)
+	{
+		marqueeStrs.splice(0, 1);
+		++marqueeFirstIndex;
+	}
+	document.getElementById('errorMarquee').innerText = marqueeStrs.map((str, i) => (i+marqueeFirstIndex).toString().concat('>', str)).join('\n');
+
+}
+
+// populate muscles/equipment category menu
+for(let [key, categories] of Object.entries( {
+	'muscles': ['biceps', 'triceps', 'front deltoid', 'lateral deltoid', 'rear deltoid'],
+	'equipment': ['dumbbell', 'none']}) )
+{
+	categories.forEach(category => {
+		let button = document.createElement('input');
+		button.setAttribute('type', 'button');
+		button.setAttribute('value', category == 'none' ? 'no equipment' : category);
+		button.onclick = () => {
+			highlight_element(button, categoryMenu.children);
+			if (key == 'muscles')
+			{
+				load_muscle_category(category);
+			}
+			else
+			{
+				load_equip_category(category);
+			}
+		};
+		categoryMenu.appendChild(button);
+	});
+}
+
+// add "equipment required" element to each exercise detail after the h1 header
+Array.from(exerciseDetails.children).forEach(exerciseDetail => {
+	let equipRequired = document.createElement('p');
+	equipRequired.style = 'font: 20px Serif';
+	equipRequired.innerText = 'Equipment: '.concat(exerciseDetail.getAttribute('data-equip'));
+	exerciseDetail.getElementsByTagName('h1')[0].after(equipRequired);
+});
+
+const HIGHLIGHT_STYLE = 'background-color: #AAFFAAFF;';
+const NON_HIGHLIGHT_STYLE = 'background-color: #F0F0F0FF;';
+// set all siblings elemnts to non-highlight color, and set 1st arg to highlight color
+function highlight_element(highlightedElem, siblingElems)
+{
+	if (siblingElems.length > 0)
+	{
+		Array.from(siblingElems).forEach(elem => elem.style = NON_HIGHLIGHT_STYLE);
+	}
+	highlightedElem.style = HIGHLIGHT_STYLE;
+}
+
+function hide_all_exercise_details()
+{
+	Array.from(exerciseDetails.children).forEach(div => div.hidden = true);
+}
+
+function open_category_menu()
+{
+	categoryMenu.hidden = false;
+	delete_children(exercisesMenu);
+	hide_all_exercise_details();
+}
+open_category_menu();
+categoryMenu.hidden = true;
+
+function delete_children(parent)
+{
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+// to be called by category menu buttons
+// name of func is short for "load exercises for muscle category"
+function load_muscle_category(category)
+{
+	load_category_internal( exerciseDetails.querySelectorAll(`div[data-muscle*="${category}"]`) )
+		// "*=" operator means "contains substring"
+}
+
+// to be called by category menu buttons
+// name of func is short for "load exercises for equipment category"
+function load_equip_category(category)
+{
+	load_category_internal( exerciseDetails.querySelectorAll(`div[data-equip*="${category}"]`) );
+}
+
+function load_category_internal(exerciseDetailDivsArr)
+{
+	exercisesMenu.hidden = false;
+	delete_children(exercisesMenu);
+	
+	if (exerciseDetailDivsArr.length == 0)
+	{
+		exercisesMenu.innerText = '(no exercises found)';
+		return;
+	}
+	
+	Array.from(exerciseDetailDivsArr)
+	.forEach(exerciseDiv => {
+		// upon clicking exercise button, destroy exercises menu and show exercise details
+		let exerciseName = exerciseDiv.getElementsByTagName('h1')[0].innerText;
+		if (!exerciseName)
+		{
+			write_marquee('Error: cannot find exercise name!');
+			throw 1;
+		}
+		let button = document.createElement('input');
+		button.setAttribute('type', 'button');
+		button.setAttribute('value', exerciseName);
+		button.onclick = () => {
+			// show only selected exercise
+			hide_all_exercise_details();
+			exerciseDiv.hidden = false;
+			
+			highlight_element(button, exercisesMenu.children);
+		}
+		exercisesMenu.appendChild(button);
+	});
+}
+
+document.getElementsByName('Pushup')[0].hidden = false;	// for test only
+
+write_marquee('compiled success');
+console.log('program end');
+</script>
+</html>
