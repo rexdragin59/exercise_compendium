@@ -9,7 +9,17 @@
 	</style>
 </head>
 <body>
-	<input type="button" value="toggle menu" onclick="open_category_menu()"></input>
+	<!--input type="button" value="open category menu" onclick="open_category_menu()"></input-->
+	<input type="button" value="toggle general tips" onclick="toggle_general_tips()"></input>
+	<div id="generalTips" hidden>
+		<hr>
+		<h3>General Tips for all exercises</h3>
+		<ul>
+			<li>Do negative reps after reaching muscle failure.</li>
+			<li>Controlled, steady movements prevent [using momentum to cheat exercises].</li>
+			<li>Focus on muscles being pumped to develop mind-muscle connection.</li>
+		</ul>
+	</div>
 	<hr>
 	<div id="categoryMenu"><!-- button inputs populated by JS one time at start -->
 	</div>
@@ -17,8 +27,7 @@
 	<div id="exercisesMenu"></div><!-- button inputs populated by JS via callback -->
 	<hr>
 	<div id="exerciseDetails">
-		<div name="Bicep Curl" data-muscle="biceps" data-equip="dumbbell">
-			<h1>Bicep Curl</h1>
+		<div name="Dumbbell Bicep Curl" data-muscle="biceps" data-equip="dumbbell">
 			<img alt="bicep curl correct" src="res/bicepCurlCorrect.gif"></img>
 			<img alt="bicep curl wrong" src="res/bicepCurlWrong.gif"></img>
 			<h2>Tips</h2>
@@ -26,6 +35,10 @@
 				<li>Elbows stationary WRT body</li>
 				<li>Body not rocking back and forth</li>
 				<li>Lift dumbbell up to nipples</li>
+				<li>Avoid curling wrist when tired</li>
+				<li>Lower dumbbell all the way until arm is vertically downward; don't stop lowering before then</li>
+				<li>Dumbbell should not move to a different sagittal plane at any time</li>
+				<li><a href="https://builtwithscience.com/fitness-tips/fix-bicep-curls-mistakes/">Jeremy Ethier built with science</a></li>
 			</ul>
 			
 			<h2>Links</h2>
@@ -34,8 +47,15 @@
 				<li><a href="https://www.youtube.com/shorts/2jpteC44QKg">max euceda youtube short</a></li>
 			</ul>
 		</div>
+		
+		<div name="Kettlebell Bicep Curl" data-muscle="biceps" data-equip="kettlebell">
+			<ul>
+				<li>Same movement as Dumbbell Bicep Curl using a kettlebell instead of a dumbbell</li>
+				<li><a href="https://www.youtube.com/watch?v=OfgQrQCLJsk">Livestrong</a></li>
+			</ul>
+		</div>
+
 		<div name="Overhead Triceps Extension" data-muscle="triceps" data-equip="dumbbell">
-			<h1>Overhead Triceps Extension</h1>
 			<img alt="overhead tricep extension" src="res/overhead tricep extension.gif"></img>
 			<h2>Tips</h2>
 			<ul>
@@ -48,7 +68,6 @@
 			</ul>
 		</div>
 		<div name="Overhead Cable Triceps Extension" data-muscle="triceps" data-equip="cable">
-			<h1>Overhead Cable Triceps Extension</h1>
 			<img alt="overhead cable tricep extension" src="res/overhead cable tricep extension.gif"></img>
 			<h2>Tips</h2>
 			<ul>
@@ -62,8 +81,7 @@
 				<li><a href="https://www.youtube.com/watch?v=GzmlxvSFE7A&t=1m8s">Colossus Fitness youtube</a></li>
 			</ul>
 		</div>
-		<div name="Shoulder Press" data-muscle="triceps, front deltoid(primary) lateral deltoid (secondary), rear deltoid (secondary)" data-equip="dumbbell">
-			<h1>Shoulder Press</h1>
+		<div name="Shoulder Press" data-muscle="triceps, anterior deltoid(primary) lateral deltoid (secondary), posterior deltoid (secondary)" data-equip="dumbbell">
 			<img alt="Shoulder Press Front" src="res/dumbbell shoulder press.gif"></img>
 			<img alt="Shoulder Press Side" src="res/dumbbell shoulder press side.gif"></img>
 			<h2>Tips</h2>
@@ -81,15 +99,24 @@
 				<li><a href="https://www.youtube.com/watch?v=rO_iEImwHyo">Max Euceda youtube</a></li>
 			</ul>
 		</div>
-		<div name="Pushup" data-muscle="triceps, pectorals, abdominals (secondary), front deltoid (secondary)" data-equip="none">
-			<h1>Pushup</h1>
+		<div name="Pushup" data-muscle="triceps, pectoralis major, abdominals (secondary), anterior deltoid, serratus anterior" data-equip="none">
 			<img alt="pushup thumbnail" src="res/pushup side neutral.gif"></img>
 			<h2>Tips</h2>
 			<img alt="wide narrow grip pushup" src="res/calisthenticMovement pushup front wide narrow.gif"></img>
 			<ul>
 				<li>Literature found no significant difference between which muscles were activated more in wide and narrow grip pushups</li>
-				<li>Can default to having hands be shoulder width apart</li>
+				<li>Can default to having hands be shoulder width apart or slightly wider</li>
 				<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4792988/">National Library of Medicine</a></li>
+				<br>
+				<li>Unconfirmed optional: squeeze chest at top of pushup</li>
+				<li>Unconfirmed optional: Remain in pushup's top position for a short while after arms are at muscle failure</li>
+				<li>Gripping parallettes (portable parallel bars one foot high) allows pushup to dip deeper => greater range of motion.</li>
+				<li>Unconfirmed: Legs and feet can be pinched together or shoulder-width apart; doesn't matter</li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="knee pushup" src="res/knee pushup.gif"></img>
+			<ul>
+				<li>To make the pushup less intense, knees can touch ground</li>
 			</ul>
 			<hr class="dottedHr">
 			<img alt="jeremy etheir chest triceps focus pushup" src="res/jeremy ethier pushups.gif"></img>
@@ -178,6 +205,7 @@
 			</ul>
 			<hr class="dottedHr">
 			<img alt="pseudo planche pushup" src="res/pushup side psuedo planche.gif"></img>
+			<img alt="pseudo planche pushup wall" src="res/pseudo planche pushup wall.gif"></img>
 			<h2>Variation: Pseudo-planche pushup</h2>
 			<ul>
 				<li>Harder variation of pushup with posture similar to a full planche</li>
@@ -185,12 +213,8 @@
 				<li>Fingers should be pointed 45 degrees (or even 90 degrees) from mid-sagittal plane</li>
 				<li>To combat [pushing body inferiorly, can gently touch head to wall throughout pseudo-planche pushup; head must remain in gently contact with wall throughout this exercise</li>
 				<li><a href="https://www.youtube.com/watch?v=ACCElohmii0">FitnessFAQs youtube</a></li>
+				<li><a href="https://www.youtube.com/watch?v=TZ63httkob4&t=129s">FitnessFAQs planch pushup progression youtube</a></li>
 				<li><a href="https://www.youtube.com/watch?v=IODxDxX7oi4">Calisthenic movement youtube perfect pushup</a></li>
-			</ul>
-			<hr class="dottedHr">
-			<ul>
-				<li>Unconfirmed optional: squeeze chest at top of pushup</li>
-				<li>Unconfirmed optional: Remain in pushup's top position for a short while after arms are at muscle failure</li>
 			</ul>
 			<hr class="dottedHr">
 			<h2>Variation: pike pushup</h2>
@@ -203,14 +227,589 @@
 				<li>Keep pelvis angle constant throughout this exercise</li>
 				<li>Elevate hands to decrease intensity.</li>
 				<li>Elevate feet to increse intensity.</li>
+				<li>Planche pushup and handstand pushup are more advanced forms of the pike pushup.</li>
 			</ul>
 			<li><a href="https://www.youtube.com/watch?v=0cT6ug3WVn4">Saturno movement youtube pike pushup</a></li>
 			<li><a href="https://www.youtube.com/watch?v=66x0qQiJ-MA">Minus The Gym youtube pike pushup</a></li>
 			<li><a href="https://www.youtube.com/watch?v=Ajna6AxQdtw">Andrew Alinda youtube</a></li>
+			<hr class="dottedHr">
+			<h2>Variation: incline/decline pushup</h2>
+			<img alt="incline decline pushup" src="res/incline decline pushup.gif"></img>
+			<ul>
+				<li>Incline is less intense and focuses on shoulders and upper chest</li>
+				<li>Decline is more intense and focuses on lower chest</li>
+			</ul>
+			<li><a href="https://www.madbarz.com/blog/134-incline-vs-decline-push-ups-whats-the-differe">Madbarz blog</a></li>
+			<li><a href="https://www.livestrong.com/article/537593-what-do-decline-and-incline-pushups-work-on/">Livestrong incline decline pushups</a></li>
+			<hr class="dottedHr">
+			<h2>Variation: Diamond pushup</h2>
+			<img alt="diamond pushup" src="res/diamond pushup.gif"></img>
+			<br>
+			<img alt="diamond pushup center of chest" src="res/diamond pushup middle of chest.png"></img>
+			<ul>
+				<li>Diamond pushup focuses on triceps and pecs more than regular pushup</li>
+				<li>Arms vertical at top of pushup</li>
+				<li>Bend elbows so that body doesn't move inferiorly nor superiorly upon descending/ascending</li>
+				<li>Middle of sternum lands in middle of finger diamond</li>
+				<li>Decline is more intense and focuses on lower chest</li>
+			</ul>
+			<li><a href="https://www.youtube.com/watch?v=J0DnG1_S92I">Scott Herman Fitness how to diamond pushup</a></li>
+			<li><a href="https://www.inspireusafoundation.org/diamond-push-ups-benefits/">Inspire USA Foundation diamond pushup benefits</a></li>
+			<hr class="dottedHr">
+			<h2>Variation: Archer pushup</h2>
+			<img alt="archer pushup how to" src="res/archer pushup how to.gif"></img>
+			<br>
+			<img alt="archer pushup weight shift mistake" src="res/archer pushup bad shift weight.gif"></img>
+			<ul>
+				<li>When elbow flare angle is 10-30 degrees, this exercises focuses on anterior deltoid & triceps brachii</li>
+				<li>When elbow flare angle is 30-70 degrees, this exercises focuses on pecs</li>
+				<li>When elbow flare angle is &gt;70 degrees, shoulder injury can occur</li>
+				<li>At bottom of pushup, touch pec to thumb</li>
+				<li>When tired, avoid [moving medially and then anteriorly] in separate motions</li>
+				<li>The wider the distance between hands, the more intense this exercise becomes.</li>
+			</ul>
+			<li><a href="https://www.youtube.com/watch?v=A0r8ploEnZY">Victory Calisthenics archer pushups correct form</a></li>
+			<li><a href="https://www.youtube.com/watch?v=RxhxrtivBcw&t=8m46s">Calisthenics Movement everything wrong with pushups</a></li>
+			<li><a href="https://www.muscleandmotion.com/archer-push-up/">Muscle and Motion</a></li>
+			<li><a href="https://www.freeletics.com/en/blog/posts/freeletics-exercises-archer-pushups/">Freeletics</a></li>
+			
+			<hr class="dottedHr">
+			
+			<h2>Variation: Spider(man) pushup</h2>
+			<img alt="spider pushup" src="res/spider pushup.gif"></img>
+			<br>
+			<img alt="spiderman crawl pushup" src="res/spiderman crawl pushup.gif"></img>
+			<ul>
+				<li>Works rectus abdominis, oblique abdominals, hip flexors (to raise knee), and quadriceps in addition to regular pushup muscles.</li>
+				<li>Start in regular pushup position</li>
+				<li>Can do crawl variation to crawl forward with each step</li>
+			</ul>
+			<li><a href="https://www.youtube.com/watch?v=qG2oWGqXSdw">BuiltLean spider pushup form</a></li>
+			<li><a href="https://www.youtube.com/watch?v=_K7rv_vFOWM">3VFitness spiderman crawl</a></li>
 		</div>
+		<div name="Plank" data-muscle="abdominals: {rectus abdominis, transverse abdominis, internal obliques, external obliques}, serratus anterior, hamstring, gluteus maximum" data-equip="none">
+			<img alt="plank" src="res/plank.png"></img>
+			<h2>Tips & Links</h2>
+			<img alt="plank" src="res/plank forearms angle.png"></img>
+			<ul>
+				<li>Start facedown on ground. Then support body using forearms. Forearms should be pointing forward like a sphinx.</li>
+				<li>Elbows directly underneath shoulders</li>
+				<li>Squeeze glutes and quads to keep legs straight</li>
+				<li>Hold Plank posture for as long as you like.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<img alt="plank" src="res/plank fists.png"></img>
+			<ul>
+				<li>Can ball hands into fists, as if slamming a gavel.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<img alt="plank" src="res/plank neck.png"></img>
+			<ul>
+				<li>Neck line should coincide with spine line. Neck tends to droop when tired.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<img alt="plank" src="res/plank scapulae.gif"></img>
+			<ul>
+				<li>If shoulders (not back) becomes rounded, return to straight spine posture.</li>
+				<li>Scapulae should be depressed inferiorly rather than elevated superiorly</li>
+				<li>If gravity gradually pulls the scapulae together, protract scapulae laterally.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<img alt="plank" src="res/plank hip height.png"></img>
+			<img alt="plank" src="res/plank pelvis tilt.gif"></img>
+			<ul>
+				<li>Keep back straight by engaging abs to kyphose the thoracic spine. Back a bit rounded is OK.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Extended Plank</h2>
+			<img alt="extended plank" src="res/extended plank.png"></img>
+			<img alt="extended plank toe walk" src="res/plank extended toe walk.gif"></img>
+			<ul>
+				<li>Start in plank posture. Move toes backward (or slide forearms forward) so that nose is at same level as elbow. Maintain this posture.</li>
+				<li><a href="https://www.youtube.com/watch?v=lismOShjHnA">FitnessFAQs 10 plank mistakes</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Side Plank</h2>
+			<img alt="side plank 1" src="res/side plank 1.jpg"></img>
+			<img alt="side plank 2" src="res/side plank 2.jpg"></img>
+			<img alt="side plank 3" src="res/side plank 3.png"></img>
+			<ul>
+				<li>Feet stacked, elbow directly beneath armpit.</li>
+				<li>Keep neck, torso, glutes, and legs in the same sagittal plane and the same frontal plane.</li>
+				<li>Keep {abs, glutes} tensed.</li>
+				<li><a href="https://www.youtube.com/watch?v=rCxF2nG9vQ0">Get Exercise Confident</a></li>
+			</ul>
+			<br>
+			<img alt="side plank mistakes" src="res/side plank mistakes.png"></img>
+			<img alt="correcting side plank neck" src="res/correcting side plank neck.gif"></img>
+			<ul>
+				<li>Sign of getting tired: leaning into [shoulder touching ground], neck leaning forward.</li>
+				<li>Sign of getting tired: hips sagging toward ground</li>
+				<li>Sign of getting tired: hips jutting skyward</li>
+			</ul>
+			<br>
+			<img alt="side plank body rotation" src="res/side plank body rotation.png"></img>
+			<ul>
+				<li>Sign of getting tired: rotated/rolling body</li>
+			</ul>
+			<br>
+			<img alt="side plank hip thrust" src="res/side plank hip thrust.png"></img>
+			<ul>
+				<li>Sign of getting tired: hip bent forward or backward</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Star (Side) Plank</h2>
+			<img alt="star side plank" src="res/star side plank.png"></img>
+			<ul>
+				<li>Feet stacked</li>
+				<li>Same muscles worked as side plank except more challenging.</li>
+				<li>Hold this starfish posture.</li>
+				<li><a href="https://www.youtube.com/watch?v=dTVsIOl1fN8">Josh Wilson star side plank youtube</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Hand Plank</h2>
+			<img alt="hand plank" src="res/hand plank.png"></img>
+			<ul>
+				<li>Can hold pushup posture instead of resting on forearms</li>
+				<li>Shoulders directly above hands</li>
+				<li>Easier than resting on elbows due to being less taxing on abs</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Side Plank With Rotation</h2>
+			<img alt="side plank one arm reach" src="res/side plank one arm reach.gif"></img>
+			<ul>
+				<li>At top, body is in a perfect T-shape.</li>
+				<li>Elbow directly beneath shoulder.</li>
+				<li><a href="https://www.youtube.com/watch?v=DXQ9YKHtcsk&t=31s">Built Lean youtube</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<ul>
+				<li>There are many other advanced variations of Planks that have not yet been added to this HTML. Ex: https://greatist.com/move/plank-variations-for-core-strength</li>
+			</ul>
+			
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://www.characterstrength.co.uk/post/what-muscle-does-a-plank-work">Character Strength</a></li>
+				<li><a href="https://www.youtube.com/watch?v=6LqqeBtFn9M">Get Exercise Confident perfect plank</a></li>
+				<li><a href="https://www.nike.com/a/what-muscles-do-planks-work">FitnessFAQs 10 plank mistakes</a></li>
+			</ul>
+		</div>
+		
+		<div name="Reverse Plank" data-muscle="abdominals: {rectus abdominis, transverse abdominis, internal obliques, external obliques}" data-equip="none">
+			<img alt="reverse plank hands" src="res/reverse plank hands.png"></img>
+			<img alt="reverse plank hands" src="res/reverse plank elbows.png"></img>
+			<h2>Tips & Links</h2>
+			<ul>
+				<li>Start faceup lying on ground</li>
+				<li><a href="https://www.masterclass.com/articles/reverse-plank-exercise-guide">Masterclass</a></li>
+				<li><a href="https://www.youtube.com/watch?v=ABzfaaVlZIU">Calisthenic movement never skip this exercise</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<img alt="reverse plank hands forward backward" src="res/reverse plank hands forward backward.png"></img>
+			<ul>
+				<li>Fingers can point forward or backward or laterally</li>
+				<li>Fingers pointing cranially will (1) stretch the anterior deltoids and pecs more, and (2) Retract scapulae medially and puff chest out.</li>
+			</ul>
+			<h2>
+			
+			<hr class="dottedHr">
+			<img alt="reverse plank level123" src="res/reverse plank level123.png"></img>
+			<ul>
+				<li>Move feet closer to hands to make this exercise easier.</li>
+			</ul>
+			<h2>
+			
+			<hr class="dottedHr">
+			<img alt="reverse plank hip chest" src="res/reverse plank hip chest.png"></img>
+			<ul>
+				<li>Keep hip joint at 180 degrees</li>
+				<li>Keep chest puffed out or neutral, not hunched.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<img alt="reverse plank lower back arch" src="res/reverse plank lower back arch.gif"></img>
+			<ul>
+				<li>Keep lower back neutral, not arched lordotically.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Reverse Plank Crab Walk</h2>
+			<img alt="reverse plank crab walk" src="res/reverse plank crab walk.gif"></img>
+			<ul>
+				<li>Keep hips/butt at 180 degree angle instead of sagging down.</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Reverse Plank on One Leg</h2>
+			<img alt="reverse plank one leg" src="res/reverse plank one leg.png"></img>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Reverse Plank on One Arm</h2>
+			<img alt="reverse plank one arm 1" src="res/reverse plank one arm 1.png"></img>
+			<img alt="reverse plank one arm 2" src="res/reverse plank one arm 2.png"></img>
+			<ul>
+				<li><a href="https://outdoorfitnesssociety.com/fitness/side-plank-muscles-worked-benefits-technique/">Outdoor fitness society</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Reverse Plank Side To Side</h2>
+			<img alt="reverse plank side to side" src="res/reverse plank side to side.gif"></img>
+			<ul>
+				<li>Heels don't leave ground at any time. Toes can leave ground.</li>
+			</ul>
+		</div>
+		<div name="Scapula Pushup" data-muscle="serratus anterior" data-equip="none">
+			<h2>Tips</h2>
+			<img alt="scapula push up hands knees posture" src="res/scapula push up basic posture 1.png"></img>
+			<ul>
+				<li>Shoulders directly above hands</li>
+				<li>Hips directly above knees</li>
+			</ul>
+			
+			<img alt="scapula push up hands width" src="res/scapula push up basic posture 2.png"></img>
+			<img alt="scapula push up fingers forward" src="res/scapula push up basic posture 3.png"></img>
+			<img alt="scapula push up elbows back" src="res/scapula push up basic posture 4.png"></img>
+			<ul>
+				<li>Hands shoulder width apart (or slightly wider)</li>
+				<li>Fingers pointed forward</li>
+				<li>Elbows facing caudally</li>
+			</ul>
+			
+			<img alt="scapula push up scapula movement" src="res/scapula push up scapula movement.gif"></img>
+			<ol>
+				<li>Fully retract scapula medially.</li>
+				<li>Wait 1 second.</li>
+				<li>Fully protract scapula laterally.</li>
+				<li>Wait 1 second.</li>
+			</ol>
+			
+			<hr class="dottedHr">
+			<h2>Variations on starting posture</h2>
+			<img alt="scapula push up variation knees" src="res/scapula push up variation 1.png"></img>
+			<p>Variation: Plank posture on knees</p>
+			<br>
+			<img alt="scapula push up variation plank" src="res/scapula push up variation 2.png"></img>
+			<p>Variation: Plank posture</p>
+			<br>
+			<img alt="scapula push up variation pushup" src="res/scapula push up variation 3.png"></img>
+			<p>Variation: Pushup posture</p>
+			<br>
+			<img alt="scapula push up variation plank toes" src="res/scapula push up variation 4.png"></img>
+			<p>Variation: Plank posture with toes pointed</p>
+			<br>
+			<img alt="scapula push up variation pushup toes" src="res/scapula push up variation 5.png"></img>
+			<p>Variation: Pushup posture with toes pointed</p>
+			<br>
+			<img alt="scapula push up variation one arm pushup" src="res/scapula push up variation 6.png"></img>
+			<p>Variation: One arm pushup posture</p>
+			
+			<hr class="dottedHr">
+			<h2>Mistakes</h2>
+			<img alt="scapula push up mistake bend elbow" src="res/scapula push up mistake 1.gif"></img>
+			<p>Bending elbows; elbows should remain unbent</p>
+			<br>
+			<img alt="scapula push up mistake curl spine" src="res/scapula push up mistake 2.png"></img>
+			<p>Curling spine kyphotically; spine must be kept straight</p>
+			<br>
+			<img alt="scapula push up mistake arch back" src="res/scapula push up mistake 3.png"></img>
+			<p>Arching back lorditically; spine must be kept straight</p>
+			<br>
+			<img alt="scapula push up mistake shoulders" src="res/scapula push up mistake 4.gif"></img>
+			<p>Elevating shoulders cranially; shoulders should remain depressed caudally</p>
+			<br>
+			
+			<h2>Links</h2>
+			<ul>
+				<li><a href="https://www.youtube.com/shorts/Ng-iiDUd_fs">Saturno movement the perfect scapula pushup</a></li>
+				<li><a href="https://www.stack.com/a/why-you-should-be-performing-scapula-push-ups/">Stack why perform scap pushup</a></li>
+			</ul>
+		</div>
+		<div name="Lunge" data-muscle="gluteus maximus, hamstring, quadriceps" data-equip="none">
+			<img alt="lunge 90 degree knees" src="res/lunge 90 degrees.png"></img>
+			<ul>
+				<li>Bend knees until both knees are at 90 degrees</li>
+				<li>Front knee should never be in front of front toes</li>
+				<li>At bottom of lunge, rear knee can be slightly above ground or gently touch ground</li>
+				<li><a href="https://www.youtube.com/watch?v=wrwwXE_x-pQ">Mind Body Soul</a></li>
+				<li><a href="https://www.nsca.com/contentassets/24dd7222ed1b4caeb8a0a46b81bd11f3/ptq-4.4.9-the-undervalued-lunge.pdf">National Strength and Conditioning Association (NSCA) muscles worked</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Easy variation</h2>
+			<img alt="lunge easy variation" src="res/lunge easy variation.gif"></img>
+			<ul>
+				<li>Up and down on same leg</li>
+			</ul>
+
+			<hr class="dottedHr">
+			<h2>Variation: Reverse Lunge</h2>
+			<img alt="lunge backward" src="res/lunge backward.gif"></img>
+			<ul>
+				<li>Can step backward instead of forward when lunging</li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: Lunge Jump</h2>
+			<img alt="lunge jump" src="res/lunge jump.gif"></img>
+
+			<hr class="dottedHr">
+			<h2>Variation: Walking Lunge</h2>
+			<img alt="lunge walk" src="res/lunge walk.gif"></img>
+
+			<hr class="dottedHr">
+			<h2>Variation: Lunge with dumbbell</h2>
+			<img alt="lunge dumbbell" src="res/lunge dumbbell.gif"></img>
+		</div>
+		
+		<div name="Stir The Pot" data-muscle="abdominals: {rectus abdominis, transverse abdominis, internal obliques, external obliques}, serratus anterior, hamstring, gluteus maximum" data-equip="exercise ball">
+			<img alt="stir the pot plank" src="res/stir the pot plank.gif"></img>
+			<ul>
+				<li>Plank exercise except forearms are resting atop an exercise ball</li>
+				<li>Move elbows in a small circle.</li>
+				<li><a href="https://www.youtube.com/watch?v=-Ly8KxL9eN8">TappBrothers forget sit ups</a></li>
+				<li><a href="https://fitnessdrum.com/stir-the-pot-exercise">Fitness Drum</a></li>
+			</ul>
+		</div>
+		
+		<div name="Hollow Body Hold" data-muscle="hip flexors, quadriceps, rectus abdominis,  transverse abdominis, internal obliques, external obliques" data-equip="none">
+			<img alt="hollow body hold" src="res/hollow body hold.png"></img>
+			<img alt="hollow body hold lower back" src="res/hollow body hold lower back.png"></img>
+			<img alt="hollow body hold tuck chin" src="res/hollow body hold tuck chin.png"></img>
+			<ul>
+				<li>Hold this posture without moving</li>
+				<li>Lower back contacts floor at all times</li>
+				<li>Tuck chin in</li>
+				<li><a href="https://www.youtube.com/watch?v=BQCdzRPE9Ao">Men's Health youtube</a></li>
+				<li><a href="https://www.youtube.com/watch?v=2fB1R9uWQbw">Calisthenics Movement youtube  sit ups are a waste of time</a></li>
+			</ul>
+
+			<hr class="dottedHr">
+			<h2>Variation: Log Roll</h2>
+			<img alt="log roll" src="res/log roll.gif"></img>
+		</div>
+		
+		<div name="Dumbbell Chest Fly" data-muscle="pectoralis major, anterior deltoid, biceps" data-equip="dumbbell, bench">
+			<img alt="chest fly thumbnail" src="res/chest fly thumbnail.gif"></img>
+			<ul>
+				<li>At bottom of chest fly, keep tension in arms; don't [relax arms and let shoulders carry the dumbbells' weight].</li>
+				<li>If arms are too straight at bottom of chest fly, then biceps will be focused on more than chest.</li>
+				<li>Keep elbows bent at about 15 degrees at bottom and middle of this exercise</li>
+				<li>To prevent shoulder injury, upper arms should decline no lower than ~20 degrees beneath frontal plane of body.</li>
+				<li>Don't crash dumbbells into each other at top.</li>
+				<li>Straighten arms vertically at top of chest fly.</li>
+				<li><a href="https://weighttraining.guide/exercises/dumbbell-fly/">WeightTraining.Guide</a></li>
+				<li><a href="https://www.youtube.com/watch?v=QENKPHhQVi4">Mind Pump how to properly do a dumbbell fly</a></li>
+				<li><a href="https://www.youtube.com/watch?v=eozdVDA78K0">Scott Herman Fitness how to dumbbell fly on a flat bench</a></li>
+				<li><a href="https://www.muscleandfitness.com/workouts/chest-exercises/pre-exhaustion-pec-training/">Muscle and Fitness chest exercises</a></li>
+			</ul>
+
+			<hr class="dottedHr">
+			<img alt="chest fly four points of contact" src="res/chest fly four points of contact.png"></img>
+			<ul>
+				<li>Body contacts bench/floor at four locations: head, upper back, butt, feet</li>
+			</ul>
+			<hr class="dottedHr">
+			<img alt="chest fly elbow tilt" src="res/chest fly elbow tilt.png"></img>
+			<ul>
+				<li>Keep elbows NOT tilted at bottom of chest fly</li>
+			</ul>
+
+			<hr class="dottedHr">
+			<img alt="chest fly line of action" src="res/chest fly line of action.png"></img>
+			<ul>
+				<li>Arms should be aligned with direction of weight so as to avoid including anterior deltoids or lats.</li>
+				<li><a href="https://www.youtube.com/watch?v=mLgYNdxj-Vw">Jeremy Ethier stop doing chest flys like this</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<img alt="chest fly elbow shoulder transverse plane" src="res/chest fly elbow shoulder transverse plane.png"></img>
+			<ul>
+				<li>Keep {hands, elbows, shoulders} in same transverse plane at all times.</li>
+				<li><a href="https://www.youtube.com/watch?v=mLgYNdxj-Vw">Jeremy Ethier stop doing chest flys like this</a></li>
+			</ul>
+
+			<hr class="dottedHr">
+			<img alt="chest fly depress shoulders" src="res/chest fly depress shoulders.gif"></img>
+			<ul>
+				<li>Depress shoulders caudally at all times to keep shoulders from overengaging.</li>
+			</ul>
+
+			<hr class="dottedHr">
+			<img alt="chest fly hunch shoulders" src="res/chest fly hunch shoulders.gif"></img>
+			<ul>
+				<li>Keep scapulae retracted medially throughout exercise.</li>
+				<li>Squeeze pecs medially without hunching shoulders by imagining squeezing the biceps (or elbows) close to each other medially.</li>
+			</ul>
+
+			<hr class="dottedHr">
+			<img alt="chest fly with band" src="res/chest fly with band.png"></img>
+			<ul>
+				<li>Due to low-to-none chest contract at top of chest fly, can use a cable fly instead or can wrap resistance bands around the dumbbells and around the underside of the bench to simulate the constant tension of a cable fly.</li>
+			</ul>
+
+			<hr class="dottedHr">
+			<h2>Variation: Floor fly</h2>
+			<img alt="floor fly" src="res/floor fly.png"></img>
+			<ul>
+				<li>Maybe lie down with back on a towel or solid foam block to simulate height of bench</li>
+				<li>Slightly decreased range of motion compared to using bench due to [elbows hitting ground].</li>
+				<li><a href="https://www.youtube.com/watch?v=S298ziysRdI">Athlean X floor fly</a></li>
+			</ul>
+
+			<hr class="dottedHr">
+			<h2>Variation: One Arm Dumbbell Chest Fly</h2>
+			<img alt="chest fly one arm" src="res/chest fly one arm.gif"></img>
+			<ul>
+				<li>Same as bilateral dumbbell chest fly, except core/abdominal muscles must be engaged to prevent weight from knocking body off bench.</li>
+				<li><a href="https://www.youtube.com/watch?v=7LnGW4ik3hU">Livestrong</a></li>
+			</ul>
+
+		</div>
+		<div name="Bent Over Dumbbell Row" data-muscle="latissimus dorsi, rhomboids, lower trapezius, posterior deltoids, biceps" data-equip="dumbbell, bench">
+			<img alt="bent over dumbbell row thumbnail" src="res/bent over dumbbell row thumbnail.gif"></img>
+			<ul>
+				<li>Feet are shoulder-width apart. Toes pointed forward.</li>
+				<li>Arms are shoulder width apart.</li>
+				<li>Overhand grip</li>
+				<li>Arms are pointing vertically downward at bottom of exercise.</li>
+				<li>Imagine rowing a barbell into bellybutton at top of exercise.</li>
+				<li>Stick butt somewhat to decrease pressure on lower back.</li>
+				<li><a href="https://www.youtube.com/watch?v=4xq3BsKTzYo">Scott Herman Fitness</a></li>
+			</ul>
+
+			<img alt="bent over dumbbell row spine" src="res/bent over dumbbell row spine.png"></img>
+			<ul>
+				<li>Keep spine neutral, not arched [kyphotically/lordotically].</li>
+				<li>If lower back becomes sore quickly, train lower back more!</li>
+				<li>Keep {shoulder, spine, hips} in same position WRT feet throughout this exercise.</li>
+				<li><a href="https://www.youtube.com/shorts/-Jm6Mptc0oc">Sean Nalewanyj youtube short</a></li>
+			</ul>
+
+			<hr class="dottedHr">
+			<img alt="bent over dumbbell row nipples" src="res/bent over dumbbell row nipples.gif"></img>
+			<img alt="bent over dumbbell elbows" src="res/bent over dumbbell elbows.gif"></img>
+			<ul>
+				<li>Don't pull dumbbells straight up to nipples, since this works trapezius.</li>
+				<li>Should drive dummbells and elbows backward instead.</li>
+				<li>Squeeze lats at top of dumbbell row</li>
+				<li><a href="https://www.youtube.com/watch?v=ayBUERt_w6g&t=157s">Alex Crockford youtube</a></li>
+			</ul>
+
+			<hr class="dottedHr">
+			<img alt="bent over dumbbell row delta bolic shrug shoulders" src="res/bent over dumbbell row delta bolic shrug shoulders.gif"></img>
+			<ul>
+				<li>Keep shoulders depressed inferiorly/caudally throughout this exercise.</li>
+				<li><a href="https://www.youtube.com/shorts/aTpyxvsPJDA">Delta Bolic Andrew Kwong shrug shoulder</a></li>
+			</ul>
+
+			<hr class="dottedHr">
+			<h2>Variation: Underhand grip and other grips</h2>
+			<img alt="bent over dumbbell row underhand grip" src="res/bent over dumbbell row underhand grip.gif"></img>
+			<img alt="bent over dumbbell row variation grip" src="res/bent over dumbbell row variation grip.gif"></img>
+			<ul>
+				<li>Can grip dumbbell differently from barbell.</li>
+			</ul>
+
+			<hr class="dottedHr">
+			<h2>Variation: One Arm</h2>
+			<img alt="bent over dumbbell row one arm scapula" src="res/bent over dumbbell row one arm scapula.gif"></img>
+			<ul>
+				<li>Only the side that is rowing should move the scapula; the other side of the body should neither roll nor move the scapula.</li>
+				<li>Protract scapula laterally at bottom, and retract scapula medially at top.</li>
+				<li>Shoulders remain (VERY) slightly above hips.</li>
+				<li><a href="https://www.youtube.com/watch?v=pYcpY20QaE8">Scott Herman Fitness one arm dumbbell row</a></li>
+				<li><a href="https://www.youtube.com/watch?v=jO5gv181MGg">Rennaisance Periodization</a></li>
+			</ul>
+			
+			<br>
+			<img alt="bent over dumbbell row one arm touch hip" src="res/bent over dumbbell row one arm touch hip.gif"></img>
+				<img alt="bent over dumbbell row one arm elbow flare" src="res/bent over dumbbell row one arm elbow flare.png"></img>
+			<ul>
+				<li>Can gently touch dumbbell to lowest rib's skin to ensure full range of motion at top of dumbbell row.</li>
+				<li>Arm is straight and points downward vertically at bottom.</li>
+				<li><a href="https://www.youtube.com/watch?v=jO5gv181MGg">Rennaisance Periodization</a></li>
+				<li>Upper arm should be flared &lt;30 degrees away from sagittal plane.</li>
+				<li><a href="https://www.youtube.com/watch?v=djKXLt7kv7Q">Jeff Nippard how to build bigger back</a></li>
+			</ul>
+			
+			<br>
+			<img alt="bent over dumbbell row one arm shift torso mistake" src="res/bent over dumbbell row one arm shift torso mistake.gif"></img>
+			<ul>
+				<li>Mistake: shifting torso while rowing.</li>
+			</ul>
+			
+			<br>
+			<img alt="bent over dumbbell row one arm head body roll jeff nippard" src="res/bent over dumbbell row one arm head body roll jeff nippard.gif"></img>
+			<ul>
+				<li>Should roll body a bit--not too much and not too little.</li>
+				<li><a href="https://www.youtube.com/watch?v=djKXLt7kv7Q">Jeff Nippard how to build bigger back</a></li>
+			</ul>
+
+			<br>
+			<img alt="bent over dumbbell row one arm head body bob" src="res/bent over dumbbell row one arm head body bob.gif"></img>
+			<ul>
+				<li>Mistake: Head and body bobbing up and down while rowing.</li>
+			</ul>
+			
+			<br>
+			<img alt="bent over dumbbell row one arm neck" src="res/bent over dumbbell row one arm neck.png"></img>
+			<ul>
+				<li>Keep neck in line with spine.</li>
+				<li><a href="https://www.youtube.com/watch?v=roCP6wCXPqo">Men's health</a></li>
+			</ul>
+
+			<br><br>
+			<ul>
+				<li>When lats get tired, can pull dumbbell up with a bit of momentum ("cheating") so that lats can contract harder at top of dumbbell row.</li>
+				<li><a href="https://www.youtube.com/watch?v=djKXLt7kv7Q">Jeff Nippard how to build bigger back</a></li>
+				<li><a href="https://www.youtube.com/watch?v=pkwFU_LfFM4">Omarlsuf STOP Doing Dumbbell Rows With STRICT Form</a></li>
+			</ul>
+
+			<h2>Additional Links</h2>
+			<ul>
+				<li><a href="https://www.healthline.com/health/fitness/bent-over-row#muscles-worked">Healthline</a></li>
+				<li><a href="https://steelsupplements.com/blogs/steel-blog/how-to-do-bent-over-dumbbell-rows-form-benefits">Steel supplements</a></li>
+				<li><a href="https://www.youtube.com/watch?v=djKXLt7kv7Q">Max Euceda</a></li>
+			</ul>
+		</div>
+		<!--
+		DO NOT OVERWRITE TEMPLATE WHEN USING TEMPLATE; MAKE A COPY INSTEAD
+		<div name="Template" data-muscle="muscles_here" data-equip="equipment_here">
+			<img alt="alt_text_here" src="res/placeholder.png"></img>
+			<ul>
+				<li>Text_here</li>
+				<li><a href="URL_HERE">DESCRIPTION_HERE</a></li>
+			</ul>
+			
+			<hr class="dottedHr">
+			<h2>Variation: VARIATION_HERE</h2>
+			<img alt="alt_text_here" src="res/placeholder.png"></img>
+			<ul>
+				<li>Text_here</li>
+				<li><a href="URL_HERE">DESCRIPTION_HERE</a></li>
+			</ul>
+		</div>
+		-->
 	</div>
 	<div id="errorMarquee" style="font-family: courier new; font-size: 10px;">Javascript did not compile</div>
 </body>
+
+
+
+
+
+
 <script>
 console.log('program begin');
 
@@ -229,63 +828,131 @@ function write_marquee(str)
 
 }
 
+// enable lazy loading for all img elements
+document.querySelectorAll('img').forEach(img => img.loading = 'lazy');
+let xx;
 // populate muscles/equipment category menu
 for(let [key, categories] of Object.entries( {
-	'muscles': ['biceps', 'triceps', 'front deltoid', 'lateral deltoid', 'rear deltoid'],
-	'equipment': ['dumbbell', 'none']}) )
+	'arm muscles': ['biceps', 'triceps'],
+	'shoulder muscles': ['anterior deltoid', 'lateral deltoid', 'posterior deltoid'],
+	'abdominal muscles': ['rectus abdominis', 'transverse abdominis', 'obliques'],
+	'chest muscles': ['serratus anterior', 'pectoral'],
+	'equipment': ['dumbbell', 'exercise ball', 'kettlebell', 'none']}) )
 {
+	let title = document.createElement('span');	// 'span' element has no newline after it
+	title.innerText = key.concat(': ');
+	categoryMenu.appendChild(title);
+	
 	categories.forEach(category => {
 		let button = document.createElement('input');
 		button.setAttribute('type', 'button');
 		button.setAttribute('value', category == 'none' ? 'no equipment' : category);
 		button.onclick = () => {
-			highlight_element(button, categoryMenu.children);
-			if (key == 'muscles')
+			highlight_elements([button], categoryMenu.children);
+			
+			// highlight [exercise menu's buttons] corresponding to the category button pressed
+			let relevantExerciseDivs;
+			if (key == 'equipment')
 			{
-				load_muscle_category(category);
+				relevantExerciseDivs = exerciseDetails.querySelectorAll(`div[data-equip*="${category}"]`);
+				// "*=" operator means "contains substring"
 			}
 			else
 			{
-				load_equip_category(category);
+				relevantExerciseDivs = exerciseDetails.querySelectorAll(`div[data-muscle*="${category}"]`);
 			}
+			
+			highlight_elements(
+				Array.from(relevantExerciseDivs)
+				  .map( div => div.getAttribute('name') )
+				  .map( name => document.getElementsByName(`button_${name}`)[0] ),
+				exercisesMenu.children
+			);
 		};
 		categoryMenu.appendChild(button);
 	});
+	categoryMenu.appendChild( document.createElement('br') );
 }
 
 // add "equipment required" element to each exercise detail after the h1 header
+// also create the h1 header for each exercise detail
 Array.from(exerciseDetails.children).forEach(exerciseDetail => {
+	let h1 = document.createElement('h1');
+	h1.innerText = exerciseDetail.getAttribute('name');
+	
 	let equipRequired = document.createElement('p');
 	equipRequired.style = 'font: 20px Serif';
 	equipRequired.innerText = 'Equipment: '.concat(exerciseDetail.getAttribute('data-equip'));
-	exerciseDetail.getElementsByTagName('h1')[0].after(equipRequired);
+	exerciseDetail.insertBefore(h1, exerciseDetail.firstChild);
+	h1.after(equipRequired);
+	
+	let musclesWorked = document.createElement('p');
+	musclesWorked.style = 'font: 20px Serif';
+	musclesWorked.innerText = 'Muscles worked: '.concat(exerciseDetail.getAttribute('data-muscle'));
+	equipRequired.after(musclesWorked);
 });
+
+// create exercise menu
+function create_exercise_menu()
+{
+	Array.from(exerciseDetails.children).forEach(exerciseDiv => {
+		// upon clicking exercise button, destroy exercises menu and show exercise details
+		let exerciseName = exerciseDiv.getElementsByTagName('h1')[0].innerText;
+		if (!exerciseName)
+		{
+			write_marquee('Error: cannot find exercise name!');
+			throw 1;
+		}
+		let button = document.createElement('input');
+		button.setAttribute('type', 'button');
+		button.setAttribute('value', exerciseName);
+		button.setAttribute('name', `button_${exerciseName}`);
+		button.onclick = () => {
+			// show only selected exercise
+			hide_all_exercise_details();
+			exerciseDiv.hidden = false;
+			
+			highlight_elements([button], exercisesMenu.children);
+		}
+		exercisesMenu.appendChild(button);
+	});
+}
+create_exercise_menu();
 
 const HIGHLIGHT_STYLE = 'background-color: #AAFFAAFF;';
 const NON_HIGHLIGHT_STYLE = 'background-color: #F0F0F0FF;';
-// set all siblings elemnts to non-highlight color, and set 1st arg to highlight color
-function highlight_element(highlightedElem, siblingElems)
+// set all siblings elements to non-highlight color, and set all elems in iterable highlightedElems to highlight color
+// highlightedElem can be undefined to manually highlight nothing
+function highlight_elements(highlightedElems, siblingElems)
 {
-	if (siblingElems.length > 0)
+	Array.from(siblingElems).forEach(elem => elem.style = NON_HIGHLIGHT_STYLE);
+	if (highlightedElems && highlightedElems.length > 0)
 	{
-		Array.from(siblingElems).forEach(elem => elem.style = NON_HIGHLIGHT_STYLE);
+		Array.from(highlightedElems).forEach(elem => elem.style = HIGHLIGHT_STYLE);
 	}
-	highlightedElem.style = HIGHLIGHT_STYLE;
 }
 
 function hide_all_exercise_details()
 {
 	Array.from(exerciseDetails.children).forEach(div => div.hidden = true);
 }
-
+/*
 function open_category_menu()
 {
-	categoryMenu.hidden = false;
+	//categoryMenu.hidden = false;
 	delete_children(exercisesMenu);
 	hide_all_exercise_details();
+	highlight_elements(undefined, categoryMenu.children);	// un-highlight all categories
 }
-open_category_menu();
-categoryMenu.hidden = true;
+*/
+//open_category_menu();
+//categoryMenu.hidden = true;
+
+function toggle_general_tips()
+{
+	generalTips.hidden = !generalTips.hidden;
+	
+}
 
 function delete_children(parent)
 {
@@ -294,29 +961,19 @@ function delete_children(parent)
     }
 }
 
-// to be called by category menu buttons
-// name of func is short for "load exercises for muscle category"
-function load_muscle_category(category)
-{
-	load_category_internal( exerciseDetails.querySelectorAll(`div[data-muscle*="${category}"]`) )
-		// "*=" operator means "contains substring"
-}
+/*
 
-// to be called by category menu buttons
-// name of func is short for "load exercises for equipment category"
-function load_equip_category(category)
+// param exerciseDetailDivsArr is iterable of divs, each of which is an exercise detail
+// highlights exercises menu's buttons corresponding to the exercise details in param
+function create_exercise_menu()
 {
-	load_category_internal( exerciseDetails.querySelectorAll(`div[data-equip*="${category}"]`) );
-}
-
-function load_category_internal(exerciseDetailDivsArr)
-{
-	exercisesMenu.hidden = false;
-	delete_children(exercisesMenu);
-	
+	exerciseDetails.children
+	// exercisesMenu.hidden = false;
+	//delete_children(exercisesMenu);
 	if (exerciseDetailDivsArr.length == 0)
 	{
-		exercisesMenu.innerText = '(no exercises found)';
+		// exercisesMenu.innerText = '(no exercises found)';
+		throw 'TODO highlight nothing instead of setting innertext to NO EXERCISES FOUND';
 		return;
 	}
 	
@@ -337,13 +994,14 @@ function load_category_internal(exerciseDetailDivsArr)
 			hide_all_exercise_details();
 			exerciseDiv.hidden = false;
 			
-			highlight_element(button, exercisesMenu.children);
+			highlight_elements([button], exercisesMenu.children);
 		}
 		exercisesMenu.appendChild(button);
 	});
 }
+*/
 
-document.getElementsByName('Pushup')[0].hidden = false;	// for test only
+document.getElementsByName('Bent Over Dumbbell Row')[0].hidden = false;	// for testing only
 
 write_marquee('compiled success');
 console.log('program end');
