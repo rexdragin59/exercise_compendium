@@ -1,30 +1,37 @@
-Kapwing: online youtube trimmer and video editor
+Consider buying gymnastics rings that have long belts which make it easy to change height as needed in public.
+------------------------------------
+TODO:
+* exercises that work back muscles other than the lats (rhomboids, levator scapulae, erector spinae, trapezius, etc.)
+	- face pull
+		- trapezius shrug variation: https://www.youtube.com/watch?v=cYPDveEb1RQ&t=5m26s
+	- testosterone nation standing shrug row https://www.youtube.com/watch?v=zNRJTU5Wbk8
+	- testosterone nation seated shrug row https://www.youtube.com/watch?v=UBzOiXxCpAk
+	- National Council on Strength and Fitness: "Prone Bench Reaches I, Y, T, M, W" https://www.youtube.com/watch?v=L0ibW52dWFU
+		- can add dumbbells like in https://www.youtube.com/watch?v=iCggk8mWMmU
+* V-Sit
+	- V-Up https://barbend.com/hollow-rocks/
+* TRX pullup/row
+	- TRX stands for "Total Body Resistance Exercise"; https://www.trueconditioning.com/fitness/4-benefits-of-trx-suspension-training/
+* jackknife pullup on gymnastics rings
+	- Hybrid calisthenics https://www.youtube.com/watch?v=fO3dKSQayfg
+	- minimalism fitness https://www.youtube.com/watch?v=hOeVnpc5Sfw
+* leg raise while lying flat on ground, faceup
+	- "lying leg raises"
+	- variation: Swipers  https://www.youtube.com/watch?v=TqXwI1MWZks&t=11m20s
+* Cable chest fly
+	- Using resistance bands https://www.youtube.com/watch?v=v7MyZQzkzYM
+* Ab wheel rollout
+* dumbbell side bend to workout abs
+	- BAD EXERCISE FOR PAIN; do variations instead.
+	- https://www.youtube.com/watch?v=7vDwifRh2l4&t=9m30s
+* grip strength exercises
+* excel compendium pg 1/2/3
+* Delete extraneous video files from /res directory
 
-pushups:
-* excel compendium
-* Variation: wide, neutral, and diamond pushups
-* variation: hands gripping paralettes, esp when doing decline pushups, to avoid chin touching ground.
-* variation: elevated hands or elevated feet
-* psuedo-planch pushups
-* Variation: archer pushup
-* hands a bit wider than [directly beneath shoulders], when at top
-
-(DONE) * Variation: pike pushups
-(OBSOLETED) * squeeze pecs at top
-(OBSOLETED) * planking when exhausted
-(DONE) * lock elbows at top? To maximize Range of motion, maybe
-(DONE) * full range of motion: chest touches ground
-(DONE) * keep shoulder blades lower (inferiorly) throughout the exercise
-(DONE) * move shoulder blades laterally at top, and squeeze shoulder blades medially at bottom (rather than allowing gravity to squeeze shoulder blades medially at bottom of pushup)
-(DONE) * rotate butt and squeeze glutes to make spine straight
-(DONE) * arm flare angle
-(DONE) * body moves superiorly on the way down so that the fingertips are in line with nipples when fully down
-(DONE) * fingers neutral--neither rotated medially nor laterally
-
---------------
-TODO: 
-
-Dumbbell row
-
-kettlebell bicep curl
-Livestrong youtube https://www.youtube.com/watch?v=OfgQrQCLJsk
+Questions:
+* Does a sound workout include any/all of {sweating, high heart rate, warmup, keeping heart rate consistently high without heart rate dropping, muscle completely failed even when attempting to lift a tiny weight}?
+	- If high heart rate is needed, is it possible to attain high heart rate without legs?
+* How short time can a workout be and still remain sound?
+	- Answer: https://www.youtube.com/shorts/EmOavQTzCks can superset two exercises
+* Why go to failure on different sets of the same exercise? Hasn't the muscle failed already? Even going back a [previously completed today] exercise to failure again? Do multiple failure at the same muscle increase the risk of injury?
+* Lengthening (via stretching) pumped muscles during rest periods makes workout more productive?
